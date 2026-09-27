@@ -1,4 +1,4 @@
-﻿name: CI
+name: CI
 
 # This is the gate. Branch protection (set up in GitHub's UI, see README)
 # requires this workflow's "test" job to pass before a PR into dev,
@@ -32,7 +32,7 @@ jobs:
         run: pip install -r requirements.txt
 
       - name: Run tests (the actual gate)
-        run: pytest -v
+        run: python -m pytest -v
 
       - name: Prove the secret is usable but not leaked
         run: |
